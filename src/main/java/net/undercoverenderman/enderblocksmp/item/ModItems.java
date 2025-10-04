@@ -11,7 +11,8 @@ public class ModItems {
 
     public static final DeferredItem<Item> KMECH = ITEMS.register("kineticmechanism",
             () -> new Item(new Item.Properties()));
-
+    public static final DeferredItem<Item> SAW = ITEMS.register("craftingsaw",
+            () -> new Item(new Item.Properties()));
 
 
     public static void register(IEventBus eventBus){

@@ -66,6 +66,7 @@ public class EnderblockSMP {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
     if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.KMECH);
+            event.accept(ModItems.SAW);
         }
     }
 
