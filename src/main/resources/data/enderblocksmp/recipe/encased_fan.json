@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {"item": "enderblocksmp:andesite_machine"},
+    {"item": "create:propeller"}
+  ],
+  "result": {
+    "count": 1,
+    "id": "create:encased_fan"
+  }
+}
