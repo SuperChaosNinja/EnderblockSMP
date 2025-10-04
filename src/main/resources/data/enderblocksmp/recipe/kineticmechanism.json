@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "enderblocksmp:craftingsaw"
+    },
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "A": {
+      "item": "create:andesite_alloy"
+    },
+    "L": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "SA ",
+    "CL ",
+    "   "
+  ],
+  "result": {
+    "count": 1,
+    "id": "enderblocksmp:kineticmechanism"
+  }
+}
