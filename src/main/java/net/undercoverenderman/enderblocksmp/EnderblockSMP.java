@@ -1,5 +1,6 @@
 package net.undercoverenderman.enderblocksmp;
 
+import net.undercoverenderman.enderblocksmp.block.ModBlocks;
 import net.undercoverenderman.enderblocksmp.item.ModItems;
 import org.slf4j.Logger;
 
@@ -49,6 +50,7 @@ public class EnderblockSMP {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -64,11 +66,15 @@ public class EnderblockSMP {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-    if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.KMECH);
             event.accept(ModItems.SAW);
         }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(ModBlocks.ANDESITE_MACHINE);
+        }
     }
+
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
