@@ -1,6 +1,12 @@
 package net.undercoverenderman.enderblocksmp;
 
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.undercoverenderman.enderblocksmp.block.ModBlocks;
+import net.undercoverenderman.enderblocksmp.entity.ModEntities;
+import net.undercoverenderman.enderblocksmp.entity.client.GreenBeanRenderer;
 import net.undercoverenderman.enderblocksmp.item.ModItems;
 import org.slf4j.Logger;
 
@@ -50,7 +56,10 @@ public class EnderblockSMP {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+
         ModBlocks.register(modEventBus);
+
+        ModEntities.register(modEventBus);
 
 
         // Register the item to a creative tab
@@ -80,5 +89,13 @@ public class EnderblockSMP {
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 
+    }
+
+    @EventBusSubscriber(modid = MOD_ID)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            EntityRenderers.register(ModEntities.GBEAN.get(), GreenBeanRenderer::new);
+        }
     }
 }
